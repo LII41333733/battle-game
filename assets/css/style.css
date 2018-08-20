@@ -1,0 +1,118 @@
+
+html, body {
+    background-color: #4ca1f9;
+    margin: 0;
+    text-align: center;
+    overflow: hidden;
+  }
+  
+
+.background {
+
+    background: url("../images/mushroom-kingdom.png");
+    background-color: black;
+    background-repeat: no-repeat;
+    background-position: center;
+    /* background-attachment: fixed; */
+    background-size: cover;
+    margin: 50px auto;
+    height: 750px;
+    width: 1200px;
+    position: relative;
+    max-width: 1200px;
+  }
+
+  .playDiv {
+    top: 390px;
+  }
+  .charDiv {
+    top: 565px;
+  }
+
+  .card {
+    height: 120px;
+    width: 180px;
+    position: absolute;
+    border-radius: 5px;
+  }
+
+  .mario {
+    border: 1px solid red;
+    background: url(../images/mario.jpg);
+    z-index: 5;
+  }
+  .luigi {
+    border: 1px solid blue;
+    z-index: 5;
+    background: url(../images/luigi.jpg) no-repeat;
+    background-size: cover;
+  }
+  .yoshi {
+    border: 1px solid green;
+    z-index: 5;
+    background: url(../images/yoshi1.jpg) no-repeat;
+    background-size: cover;
+  }
+  .bowser {
+    border: 1px solid yellow;
+    z-index: 5;
+    background: url(../images/bowser.png) no-repeat;
+    background-size: cover;
+  }
+
+  .player1Empty {
+    border: 1px solid pink;
+    left: 315px;
+    background: url(../images/player1.jpg) no-repeat;
+    background-size: cover;
+    z-index: 1;
+  }
+  
+  .player2Empty {
+    border: 1px solid purple;
+    left: 720px;
+    background: url(../images/player2.jpg) no-repeat;
+    background-size: cover;
+    z-index: 1;
+  }
+
+
+  .ondeck1-position {
+    top: 565px;
+    left: 210px;
+  }
+  .ondeck2-position {
+    top: 565px;
+    left: 415px;
+  }
+  .ondeck3-position {
+    top: 565px;
+    left: 620px;
+  }
+  .ondeck4-position {
+    top: 565px;
+    left: 820px;
+  }
+  .player1-position {
+    top: 390px;
+    left: 315px;
+  }
+  .player2-position {
+    top: 390px;
+    left: 720px;
+  }
+  
+
+
+  .start {
+    background-color: white;
+    background-position: center;
+    left: 531px;
+    top: 430px;
+    width: 150px;
+    height: 28px;
+    position: absolute;
+    border-radius: 5px;
+    border: 1px solid #4ca1f9;  
+
+  }
