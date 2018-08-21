@@ -11,22 +11,43 @@
     <link href="https://fonts.googleapis.com/css?family=Didact+Gothic|Economica|Yellowtail|Mr+Dafoe|Quantico|Unica+One|Pinyon+Script"
         rel="stylesheet">
 
+
+
 </head>
 
 <body>
     <div class="background">
 
+        <div class="textDiv">Choose Your Player</div>
+
         <div class="playDiv card player1Empty player1-position"></div>
         <div class="playDiv card player2Empty player2-position"></div>
 
-        <div class="start">
-            <img src="./assets/images/start.jpg" alt="start">
+
+        <div class="attackButton hidden">
+            <!-- <img src="./assets/images/restart.jpg" alt="attack"> -->
+            Attack
         </div>
 
-        <div class="charDiv card mario ondeck1-position"></div>
-        <div class="charDiv card luigi ondeck2-position"></div>
-        <div class="charDiv card yoshi ondeck3-position"></div>
-        <div class="charDiv card bowser ondeck4-position"></div>
+        <div class="startButton"><img src="./assets/images/start.jpg" alt="start"></div>
+
+        <div class="restartButton hidden"><img src="./assets/images/start.jpg" alt="reset"></div>
+
+        <div class="charDiv card mario ondeck1-position" value="mario">
+            <div class="marioHP hp">120</div>
+        </div>
+
+        <div class="charDiv card luigi ondeck2-position" value="luigi">
+            <div class="luigiHP hp">100</div>
+        </div>
+
+        <div class="charDiv card yoshi ondeck3-position" value="yoshi">
+            <div class="yoshiHP hp">140</div>
+        </div>
+
+        <div class="charDiv card bowser ondeck4-position" value="bowser">
+            <div class="bowserHP hp">180</div>
+        </div>
 
     </div>
 

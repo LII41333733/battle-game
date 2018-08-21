@@ -1,0 +1,37 @@
+
+
+Also classes:
+Attacker 
+Defender
+(Attacker attacks for x HP, Defender attacks for x CP)
+
+-Event listener for each chardiv
+- Object for each char
+- Attacker obj
+- Defender obj
+- After start, only chardiv can be clicked
+- When char is selected
+- - remove class ondeck class
+- - add class attack position class OR defend position class 
+
+when attack is clicked,
+ 
+- - Push to HTML
+
+
+Make an imposter attacker and defender
+When a char is selected, equal the hp, and cp to the imposter. Only move the chardiv. 
+
+When a chardiv is clicked, —> This.addclass(attacker)
+This.addclass(defender)
+
+When hp reaches 0, remove classes AND give grey background
+
+
+$(“#attack”).on(“click”, fight(attacker, defender));
+
+function fight(attacker, defender) {
+   defenderHP - attackerAP
+   attackerHP - defenderCP
+   
+}

@@ -15,19 +15,14 @@ html, body {
     background-position: center;
     /* background-attachment: fixed; */
     background-size: cover;
-    margin: 50px auto;
+    margin: 0 auto;
     height: 750px;
     width: 1200px;
     position: relative;
     max-width: 1200px;
   }
 
-  .playDiv {
-    top: 390px;
-  }
-  .charDiv {
-    top: 565px;
-  }
+
 
   .card {
     height: 120px;
@@ -36,25 +31,51 @@ html, body {
     border-radius: 5px;
   }
 
+  .hp {
+    background-color: blue;
+    color: white;
+    position: absolute;
+    width: 50px;
+    line-height: 25px;
+    height: 25px;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    border-radius: 5px 0 0 0;
+  }
+  
+  .marioHP {
+    background-color: red;
+  }
+  .luigiHP {
+    background-color: blue;
+  }
+  .yoshiHP {
+    background-color: green;
+  }
+  .bowserHP {
+    background-color: orange;
+  }
+
   .mario {
-    border: 1px solid red;
+    border: 5px solid red;
     background: url(../images/mario.jpg);
     z-index: 5;
   }
   .luigi {
-    border: 1px solid blue;
+    border: 5px solid blue;
     z-index: 5;
     background: url(../images/luigi.jpg) no-repeat;
     background-size: cover;
   }
   .yoshi {
-    border: 1px solid green;
+    border: 5px solid green;
     z-index: 5;
     background: url(../images/yoshi1.jpg) no-repeat;
     background-size: cover;
   }
   .bowser {
-    border: 1px solid yellow;
+    border: 5px solid orange;
     z-index: 5;
     background: url(../images/bowser.png) no-repeat;
     background-size: cover;
@@ -78,21 +99,69 @@ html, body {
 
 
   .ondeck1-position {
-    top: 565px;
+    top: 590px;
     left: 210px;
   }
   .ondeck2-position {
-    top: 565px;
+    top: 590px;
     left: 415px;
   }
   .ondeck3-position {
-    top: 565px;
+    top: 590px;
     left: 620px;
   }
   .ondeck4-position {
-    top: 565px;
+    top: 590px;
     left: 820px;
   }
+
+  
+  
+
+
+  .startButton, .attackButton, .restartButton {
+    background-color: white;
+    background-position: center;
+    left: 531px;
+    width: 150px;
+    height: 35px;
+    line-height: 50px;
+    position: absolute;
+    border-radius: 5px;
+    border: 1px solid #4ca1f9;  
+
+  }
+
+
+
+  .startButton {
+    top: 435px;
+  }
+  .attackButton {
+    top: 355px;
+    height: 60px;
+    background-color: red;
+    color: white;
+  }
+  .restartButton {
+    top: 480px;
+  }
+
+  .hidden {
+    visibility: hidden;
+  }
+
+  .textDiv {
+    background-color: white;
+    width: 800px;
+    height: 50px;
+    line-height: 50px;
+    position: absolute;
+    top: 528px;
+    left: 210px;
+    border-radius: 5px;
+  }
+
   .player1-position {
     top: 390px;
     left: 315px;
@@ -100,19 +169,4 @@ html, body {
   .player2-position {
     top: 390px;
     left: 720px;
-  }
-  
-
-
-  .start {
-    background-color: white;
-    background-position: center;
-    left: 531px;
-    top: 430px;
-    width: 150px;
-    height: 27px;
-    position: absolute;
-    border-radius: 5px;
-    border: 1px solid #4ca1f9;  
-
   }
