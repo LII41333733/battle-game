@@ -1,4 +1,10 @@
 
+@font-face {
+  font-family: myFirstFont;
+  src: url(../css/New\ Super\ Mario\ Font\ U.ttf);
+  font-weight: bold;
+}
+
 html, body {
     background-color: #4ca1f9;
     margin: 0;
@@ -32,16 +38,17 @@ html, body {
   }
 
   .hp {
-    background-color: blue;
+    font-family: myFirstFont;
     color: white;
-    position: absolute;
-    width: 50px;
-    line-height: 25px;
+    font-size: 26px;
+    width: 41px;
+    line-height: 29px;
     height: 25px;
     position: absolute;
-    right: 0;
+    right: -4px;
     bottom: 0;
     border-radius: 5px 0 0 0;
+    margin-left: 0.5px;
   }
   
   .marioHP {
@@ -57,61 +64,75 @@ html, body {
     background-color: orange;
   }
 
-  .mario {
+  .marioCard {
     border: 5px solid red;
     background: url(../images/mario.jpg);
     z-index: 5;
   }
-  .luigi {
+  .luigiCard {
     border: 5px solid blue;
     z-index: 5;
     background: url(../images/luigi.jpg) no-repeat;
     background-size: cover;
   }
-  .yoshi {
+  .yoshiCard {
     border: 5px solid green;
     z-index: 5;
     background: url(../images/yoshi1.jpg) no-repeat;
     background-size: cover;
   }
-  .bowser {
+  .bowserCard {
     border: 5px solid orange;
     z-index: 5;
     background: url(../images/bowser.png) no-repeat;
     background-size: cover;
   }
 
+
+
   .player1Empty {
-    border: 1px solid pink;
+    border: 3px solid rgba(56, 54, 54, 0.5);
+    background-color: rgb(226, 226, 226);
+    text-shadow: -1.5px 0 black, 0 1.5px black,
+      1.5px 0 black, 0 -1.5px black;
+    font-family: myFirstFont;
+    color: white;
+    font-size: 27px;
+    line-height: 125px;
     left: 315px;
-    background: url(../images/player1.jpg) no-repeat;
-    background-size: cover;
+    top: 360px;
     z-index: 1;
   }
   
   .player2Empty {
-    border: 1px solid purple;
+    border: 3px solid rgba(56, 54, 54, 0.5);
+    background-color: rgb(226, 226, 226);
+    text-shadow: -1.5px 0 black, 0 1.5px black,
+      1.5px 0 black, 0 -1.5px black;
+    font-family: myFirstFont;
+    color: white;
+    font-size: 27px;
+    line-height: 125px;
     left: 720px;
-    background: url(../images/player2.jpg) no-repeat;
-    background-size: cover;
+    top: 360px;
     z-index: 1;
   }
 
 
   .ondeck1-position {
-    top: 590px;
+    top: 560px;
     left: 210px;
   }
   .ondeck2-position {
-    top: 590px;
+    top: 560px;
     left: 415px;
   }
   .ondeck3-position {
-    top: 590px;
+    top: 560px;
     left: 620px;
   }
   .ondeck4-position {
-    top: 590px;
+    top: 560px;
     left: 820px;
   }
 
@@ -135,38 +156,72 @@ html, body {
 
 
   .startButton {
-    top: 435px;
+    top: 405px;
+    font-family: myFirstFont;
+    border: 3px solid #4ca1f9;
+    color: #4ca1f9;
+    font-size: 25px;
+    line-height: 36px;
   }
   .attackButton {
-    top: 355px;
+    top: 310px;
     height: 60px;
     background-color: red;
     color: white;
+    border: 3px solid white;
+    font-family: myFirstFont;
+    line-height: 60px;
+    font-size: 32px;
   }
   .restartButton {
-    top: 480px;
+    top: 450px;
   }
 
   .hidden {
     visibility: hidden;
   }
 
-  .textDiv {
-    background-color: white;
+  .textDiv1 {
+    font-family: myFirstFont;
+    background-color: #4ca1f9;
+    /* border: 3px solid #c14660; */
+    border: 3px solid  white;
+    color: white;
     width: 800px;
     height: 50px;
     line-height: 50px;
     position: absolute;
-    top: 528px;
+    top: 498px;
     left: 210px;
     border-radius: 5px;
+    font-size: 25px;
+    
   }
 
-  .player1-position {
-    top: 390px;
-    left: 315px;
+  .blink-feature{
+    animation:fade-in 2.2s infinite;
   }
-  .player2-position {
-    top: 390px;
-    left: 720px;
-  }
+ 
+
+
+
+
+  @keyframes fade-in{
+    from{
+        opacity:1;
+
+    }
+    to{
+        opacity:0;
+
+    }
+}
+
+.player1-position {
+  top: 360px;
+  left: 315px;
+}
+.player2-position {
+  top: 360px;
+  left: 720px;
+}
