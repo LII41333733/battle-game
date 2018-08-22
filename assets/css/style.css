@@ -1,268 +1,251 @@
 
+
 @font-face {
   font-family: myFirstFont;
   src: url(../css/New\ Super\ Mario\ Font\ U.ttf);
   font-weight: bold;
 }
-
 html, body {
     background-color: #4ca1f9;
     margin: 0;
     text-align: center;
-    overflow: hidden;
-  }
-  
-
+}
 .background {
     background: url("../images/mushroom-kingdom.png");
     background-color: black;
     background-repeat: no-repeat;
     background-position: center;
-    /* background-attachment: fixed; */
     background-size: cover;
     margin: 30px auto;
     height: 750px;
     width: 1200px;
     position: relative;
     max-width: 1200px;
-  }
-
-
-
-  .card {
-    height: 120px;
-    width: 180px;
-    position: absolute;
-    border-radius: 5px;
-  }
-
-
-  
-  .MARIO-HP {
-    background-color: red;
-  }
-  .LUIGI-HP {
-    background-color: blue;
-  }
-  .YOSHI-HP {
-    background-color: green;
-  }
-  .BOWSER-HP {
-    background-color: orange;
-  }
-
-  .hp {
-    font-family: myFirstFont;
-    color: white;
-    font-size: 26px;
-    width: 41px;
-    line-height: 29px;
-    height: 25px;
-    position: absolute;
-    right: -4px;
-    bottom: 0;
-    border-radius: 5px 0 0 0;
-    margin-left: 0.5px;
-    z-index: 3;
-  }
-
-  .marioCard {
-    border: 5px solid red;
-    z-index: 5;
-    background: url(../images/mario.jpg);
-
-  }
-  .luigiCard {
-    border: 5px solid blue;
-    z-index: 5;
-    background: url(../images/luigi.jpg) no-repeat;
-    background-size: cover;
-  }
-  .yoshiCard {
-    border: 5px solid green;
-    z-index: 5;
-    background: url(../images/yoshi1.jpg) no-repeat;
-    background-size: cover;
-  }
-  .bowserCard {
-    border: 5px solid orange;
-    z-index: 5;
-    background: url(../images/bowser.png) no-repeat;
-    background-size: cover;
-  }
-
-
-
-  .player1Empty {
-    border: 3px solid rgba(56, 54, 54, 0.5);
-    background-color: rgb(226, 226, 226);
-    text-shadow: -1.5px 0 black, 0 1.5px black,
-      1.5px 0 black, 0 -1.5px black;
-    font-family: myFirstFont;
-    color: white;
-    font-size: 27px;
-    line-height: 125px;
-    left: 315px;
-    top: 360px;
-    z-index: 1;
-  }
-  
-  .player2Empty {
-    border: 3px solid rgba(56, 54, 54, 0.5);
-    background-color: rgb(226, 226, 226);
-    text-shadow: -1.5px 0 black, 0 1.5px black,
-      1.5px 0 black, 0 -1.5px black;
-    font-family: myFirstFont;
-    color: white;
-    font-size: 27px;
-    line-height: 125px;
-    left: 720px;
-    top: 360px;
-    z-index: 1;
-  }
-
-
-  .ondeck1-position {
-    top: 560px;
-    left: 210px;
-  }
-  .ondeck2-position {
-    top: 560px;
-    left: 415px;
-  }
-  .ondeck3-position {
-    top: 560px;
-    left: 620px;
-  }
-  .ondeck4-position {
-    top: 560px;
-    left: 820px;
-  }
-
-  
-  
-
-
-  .startButton, .attackButton, .restartButton {
-    background-color: white;
-    background-position: center;
-    left: 531px;
-    width: 150px;
-    height: 35px;
-    line-height: 50px;
-    position: absolute;
-    border-radius: 5px;
-    border: 1px solid #4ca1f9;  
-
-  }
-
-
-
-  .startButton {
-    top: 405px;
-    font-family: myFirstFont;
-    border: 3px solid #4ca1f9;
-    color: #4ca1f9;
-    font-size: 25px;
-    line-height: 36px;
-  }
-  .attackButton {
-    top: 310px;
-    height: 60px;
-    background-color: red;
-    color: white;
-    border: 3px solid white;
-    font-family: myFirstFont;
-    line-height: 60px;
-    font-size: 32px;
-  }
-  .restartButton {
-    top: 450px;
-  }
-
-  .hidden {
-    visibility: hidden;
-  }
-
-  .textDiv1 {
-    font-family: myFirstFont;
-    background-color: #4ca1f9;
-    /* border: 3px solid #c14660; */
-    border: 3px solid  white;
-    color: white;
-    width: 850px;
-    height: 50px;
-    line-height: 50px;
-    position: absolute;
-    top: 498px;
-    left: 182px;
-    border-radius: 5px;
-    font-size: 25px;
-    
-  }
-
-  .blink-feature{
-    animation:fade-in 2s infinite;
-  }
- 
-
-
-
-
-  @keyframes fade-in{
-    from{
-        opacity:1;
-
-    }
-    to{
-        opacity:0;
-
-    }
 }
 
-.player1-position {
+/* ---------------------------- CARD/HP CLASSES ----------------------------- */
+.card {
+  height: 120px;
+  width: 180px;
+  position: absolute;
+  border-radius: 5px;
+}
+
+
+div[data-fighter="MARIO"]{
+  border: 5px solid red;
+  z-index: 5;
+  background: url(../images/MARIO.jpg);
+}
+div[data-fighter="LUIGI"]{
+  border: 5px solid blue;
+  z-index: 5;
+  background: url(../images/LUIGI.jpg);
+}
+div[data-fighter="YOSHI"]{
+  border: 5px solid green;
+  z-index: 5;
+  background: url(../images/YOSHI.jpg);
+}
+div[data-fighter="BOWSER"]{
+  border: 5px solid orange;
+  z-index: 5;
+  background: url(../images/BOWSER.png);
+}
+
+div[data-fighter="MARIO"] .hp {
+  background-color: red;
+}
+div[data-fighter="LUIGI"] .hp {
+  background-color: blue;
+}
+div[data-fighter="YOSHI"] .hp {
+  background-color: green;
+}
+div[data-fighter="BOWSER"] .hp {
+  background-color: orange;
+}
+
+.hp {
+  font-family: myFirstFont;
+  color: white;
+  font-size: 26px;
+  width: 41px;
+  line-height: 29px;
+  height: 25px;
+  position: absolute;
+  right: -4px;
+  bottom: 0;
+  border-radius: 5px 0 0 0;
+  margin-left: 0.5px;
+  z-index: 3;
+}
+
+/* ------------------ DOCKS/POSITION CLASSES -------------------- */
+
+.dock-player1-empty {
+  border: 3px solid rgba(56, 54, 54, 0.5);
+  background-color: rgb(226, 226, 226);
+  text-shadow: -1.5px 0 black, 0 1.5px black,
+    1.5px 0 black, 0 -1.5px black;
+  font-family: myFirstFont;
+  color: white;
+  font-size: 27px;
+  line-height: 125px;
+  left: 315px;
+  top: 360px;
+  z-index: 1;
+}
+
+.dock-player2-empty {
+  border: 3px solid rgba(56, 54, 54, 0.5);
+  background-color: rgb(226, 226, 226);
+  text-shadow: -1.5px 0 black, 0 1.5px black,
+    1.5px 0 black, 0 -1.5px black;
+  font-family: myFirstFont;
+  color: white;
+  font-size: 27px;
+  line-height: 125px;
+  left: 720px;
+  top: 360px;
+  z-index: 1;
+}
+
+.dock-fighter1 {
+  top: 560px;
+  left: 210px;
+}
+.dock-fighter2 {
+  top: 560px;
+  left: 415px;
+}
+.dock-fighter3 {
+  top: 560px;
+  left: 620px;
+}
+.dock-fighter4 {
+  top: 560px;
+  left: 820px;
+}
+.dock-player1 {
   top: 360px;
   left: 315px;
 }
-.player2-position {
+.dock-player2 {
   top: 360px;
   left: 720px;
 }
 
+/* ----------------------- BUTTON CLASSES -------------------------- */
+
+.start-button, .attack-button, .restart-button {
+  background-color: white;
+  background-position: center;
+  left: 531px;
+  width: 150px;
+  height: 35px;
+  line-height: 50px;
+  position: absolute;
+  border-radius: 5px;
+  border: 1px solid #4ca1f9;  
+
+}
+.start-button {
+  top: 405px;
+  font-family: myFirstFont;
+  border: 3px solid #4ca1f9;
+  color: #4ca1f9;
+  font-size: 25px;
+  line-height: 36px;
+}
+.attack-button {
+  top: 310px;
+  height: 60px;
+  background-color: red;
+  color: white;
+  border: 3px solid white;
+  font-family: myFirstFont;
+  line-height: 60px;
+  font-size: 32px;
+}
+.restart-button {
+  top: 450px;
+}
+
+
+/* ---------------------- STATUS BAR CLASS ------------------------ */
+
+.status-bar {
+  font-family: myFirstFont;
+  background-color: #4ca1f9;
+  border: 3px solid  white;
+  color: white;
+  width: 850px;
+  height: 50px;
+  line-height: 50px;
+  position: absolute;
+  top: 498px;
+  left: 182px;
+  border-radius: 5px;
+  font-size: 25px;
+  z-index: 1;
+}
+.blink {
+  animation:fade-in 1.2s infinite;
+  z-index: 5;
+}
+@keyframes fade-in{
+  from{
+    opacity:1;
+  }
+  to{
+    opacity:0;
+  }
+}
+
+
+
+/* ----------------------- WIN CLASSES -------------------------- */
+
+.MARIO-win {
+  background: url(../images/MARIO-win.jpg);
+}
+.LUIGI-win {
+  background: url(../images/LUIGI-win.jpg);
+
+}
+.YOSHI-win {
+  background: url(../images/YOSHI-win.jpg);
+
+}
+.BOWSER-win {
+  background: url(../images/BOWSER-win.jpg);
+}
+
+/* ----------------------- LOSE CLASSES -------------------------- */
+
 .MARIO-lose {
-  background: url(../images/mario-cry.jpg);
+  background: url(../images/MARIO-lose.jpg);
   border: 5px solid black;
   z-index: 5;
 }
 .LUIGI-lose {
-  background: url(../images/luigi-sad1.png);
+  background: url(../images/LUIGI-lose.png);
   border: 5px solid black;
   z-index: 5;
 }
 .YOSHI-lose {
-  background: url(../images/yoshi-cry.jpg);
+  background: url(../images/YOSHI-lose.jpg);
   border: 5px solid black;
   z-index: 5;
 }
 .BOWSER-lose {
-  background: url(../images/bowser-cry.png);
+  background: url(../images/BOWSER-lose.png);
   border: 5px solid black;
   z-index: 5;
 }
-.MARIO-win {
-  background: url(../images/mario-win.jpg);
-}
-.LUIGI-win {
-  background: url(../images/luigi-win.jpg);
-
-}
-.YOSHI-win {
-  background: url(../images/yoshi-win.jpg);
-
-}
-.BOWSER-win {
-  background: url(../images/bowser-win.jpg);
-
+.MARIO-lose, .LUIGI-lose, .YOSHI-lose, .BOWSER-lose .hp{
+  background-color: black
 }
 
 .win-border {
@@ -271,4 +254,20 @@ html, body {
   border-image-slice: 1;
   z-index: 99;
 }
+
+/* ----------------------- MISC. CLASSES -------------------------- */
+
+.hidden {
+  visibility: hidden;
+}
+
+
+
+
+
+
+
+
+
+
 

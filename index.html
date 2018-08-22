@@ -16,36 +16,35 @@
 </head>
 
 <body>
+    
     <div class="background">
 
-        <div class="textDiv1"><span class="message-text blink-feature">PRESS START TO PLAY</span></div>
-
-        <div class="playDiv card player1Empty player1-position">PLAYER 1</div>
-        <div class="playDiv card player2Empty player2-position">PLAYER 2</div>
+        <div class="card dock-player1-empty">PLAYER 1</div>
+        <div class="card dock-player2-empty">PLAYER 2</div>
 
 
-        <div class="attackButton hidden">
-            ATTACK
+        <div class="attack-button hidden">ATTACK</div>
+
+        <div class="start-button">START</div>
+
+        <div class="restart-button hidden"></div>
+
+        <div class="status-bar"><span class="message-text blink">PRESS START TO PLAY</span></div>
+
+        <div class="fighter card dock-fighter1" data-fighter="MARIO">
+            <div class="hp">120</div>
         </div>
 
-        <div class="startButton">START</div>
-
-        <div class="restartButton hidden"></div>
-
-        <div class="charDiv card marioCard ondeck1-position" value="MARIO">
-            <div class="MARIO-HP MARIO hp">120</div>
+        <div class="fighter card dock-fighter2" data-fighter="LUIGI">
+            <div class="hp">100</div>
         </div>
 
-        <div class="charDiv card luigiCard ondeck2-position" value="LUIGI">
-            <div class="LUIGI-HP LUIGI hp">100</div>
+        <div class="fighter card dock-fighter3" data-fighter="YOSHI">
+            <div class="hp">140</div>
         </div>
 
-        <div class="charDiv card yoshiCard ondeck3-position" value="YOSHI">
-            <div class="YOSHI-HP YOSHI hp">140</div>
-        </div>
-
-        <div class="charDiv card bowserCard ondeck4-position" value="BOWSER">
-            <div class="BOWSER-HP BOWSER hp">180</div>
+        <div class="fighter card dock-fighter4" data-fighter="BOWSER">
+            <div class="hp">180</div>
         </div>
 
     </div>
