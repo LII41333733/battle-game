@@ -14,14 +14,13 @@ html, body {
   
 
 .background {
-
     background: url("../images/mushroom-kingdom.png");
     background-color: black;
     background-repeat: no-repeat;
     background-position: center;
     /* background-attachment: fixed; */
     background-size: cover;
-    margin: 0 auto;
+    margin: 30px auto;
     height: 750px;
     width: 1200px;
     position: relative;
@@ -37,6 +36,21 @@ html, body {
     border-radius: 5px;
   }
 
+
+  
+  .MARIO-HP {
+    background-color: red;
+  }
+  .LUIGI-HP {
+    background-color: blue;
+  }
+  .YOSHI-HP {
+    background-color: green;
+  }
+  .BOWSER-HP {
+    background-color: orange;
+  }
+
   .hp {
     font-family: myFirstFont;
     color: white;
@@ -49,25 +63,14 @@ html, body {
     bottom: 0;
     border-radius: 5px 0 0 0;
     margin-left: 0.5px;
-  }
-  
-  .marioHP {
-    background-color: red;
-  }
-  .luigiHP {
-    background-color: blue;
-  }
-  .yoshiHP {
-    background-color: green;
-  }
-  .bowserHP {
-    background-color: orange;
+    z-index: 3;
   }
 
   .marioCard {
     border: 5px solid red;
-    background: url(../images/mario.jpg);
     z-index: 5;
+    background: url(../images/mario.jpg);
+
   }
   .luigiCard {
     border: 5px solid blue;
@@ -187,19 +190,19 @@ html, body {
     /* border: 3px solid #c14660; */
     border: 3px solid  white;
     color: white;
-    width: 800px;
+    width: 850px;
     height: 50px;
     line-height: 50px;
     position: absolute;
     top: 498px;
-    left: 210px;
+    left: 182px;
     border-radius: 5px;
     font-size: 25px;
     
   }
 
   .blink-feature{
-    animation:fade-in 2.2s infinite;
+    animation:fade-in 2s infinite;
   }
  
 
@@ -225,3 +228,47 @@ html, body {
   top: 360px;
   left: 720px;
 }
+
+.MARIO-lose {
+  background: url(../images/mario-cry.jpg);
+  border: 5px solid black;
+  z-index: 5;
+}
+.LUIGI-lose {
+  background: url(../images/luigi-sad1.png);
+  border: 5px solid black;
+  z-index: 5;
+}
+.YOSHI-lose {
+  background: url(../images/yoshi-cry.jpg);
+  border: 5px solid black;
+  z-index: 5;
+}
+.BOWSER-lose {
+  background: url(../images/bowser-cry.png);
+  border: 5px solid black;
+  z-index: 5;
+}
+.MARIO-win {
+  background: url(../images/mario-win.jpg);
+}
+.LUIGI-win {
+  background: url(../images/luigi-win.jpg);
+
+}
+.YOSHI-win {
+  background: url(../images/yoshi-win.jpg);
+
+}
+.BOWSER-win {
+  background: url(../images/bowser-win.jpg);
+
+}
+
+.win-border {
+  border: 5px solid transparent;
+  border-image: linear-gradient(to bottom right, #b827fc 0%, #2c90fc 25%, #b8fd33 50%, #fec837 75%, #fd1892 100%);
+  border-image-slice: 1;
+  z-index: 99;
+}
+
