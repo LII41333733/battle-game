@@ -3,21 +3,21 @@ var game = {
     {
       name: "MARIO",
       hp: 120,
-      ap: 8,
+      ap: 2,
       cp: 15
     }, {
       name: "LUIGI",
       hp: 100,
-      ap: 10,
-      cp: 10
-    }, {
-      name: "YOSHI",
-      hp: 150,
-      ap: 6,
+      ap: 5,
       cp: 20
     }, {
+      name: "YOSHI",
+      hp: 200,
+      ap: 3,
+      cp: 10
+    }, {
       name: "BOWSER",
-      hp: 180,
+      hp: 150,
       ap: 4,
       cp: 25
     }
@@ -116,22 +116,21 @@ var game = {
         name: "MARIO",
         hp: 120,
         ap: 8,
-        cp: 15
-      }, {
+        cp: 20      }, {
         name: "LUIGI",
         hp: 100,
         ap: 10,
-        cp: 10
+        cp: 15
       }, {
         name: "YOSHI",
         hp: 150,
         ap: 6,
-        cp: 20
+        cp: 25
       }, {
         name: "BOWSER",
         hp: 180,
         ap: 4,
-        cp: 25
+        cp: 30
       }
     ];
     this.player1Chosen = false;
@@ -180,6 +179,13 @@ $(document).ready(function () {
   $(".restart-button").on("click", function () {
     game.restart();
   });
+
+  $(".toad").on("click", function () {
+    $(".modal").hide();
+  });
+
+
+
 
 });
 

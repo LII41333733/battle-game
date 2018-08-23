@@ -249,6 +249,22 @@ html, body {
   visibility: hidden;
 }
 
+#title {
+  font-size: 30px;
+}
+
+#red {
+  color: red;
+}
+#blue {
+  color: blue;
+}
+#green {
+  color: green;
+}
+#orange {
+  color: orange;
+}
 
 
 
@@ -257,16 +273,24 @@ html, body {
     border: 3px solid #4ca1f9;
     color: #4ca1f9;
     position: absolute;
-    height: 606px;
+    height: 660px;
     width: 851px;
     border-radius: 5px;
     z-index: 100;
     left: 181px;
-    top: 105px;
-    padding-top: 24px;
+    top: 20px;
+    padding: 24px;
+    text-align: center;
+    font-size: 22px;
+    line-height: 30px;
 }
 
 
 
 
 
+
+/* img {
+  width: 200px;
+  height: 188px;
+} */
