@@ -9,6 +9,8 @@ html, body {
     background-color: #4ca1f9;
     margin: 0;
     text-align: center;
+    font-family: myFirstFont;
+    font-size: 25px;
 }
 .background {
     background: url("../images/mushroom-kingdom.png");
@@ -16,7 +18,7 @@ html, body {
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-    margin: 30px auto;
+    margin: 0px auto;
     height: 750px;
     width: 1200px;
     position: relative;
@@ -53,23 +55,21 @@ html, body {
   background: url(../images/bowser.png);
 }
 
-div[data-fighter="MARIO"] .hp {
+.MARIO-hp {
   background-color: red;
 }
-div[data-fighter="LUIGI"] .hp {
+.LUIGI-hp {
   background-color: blue;
 }
-div[data-fighter="YOSHI"] .hp {
+.YOSHI-hp {
   background-color: green;
 }
-div[data-fighter="BOWSER"] .hp {
+.BOWSER-hp {
   background-color: orange;
 }
 
 .hp {
-  font-family: myFirstFont;
   color: white;
-  font-size: 26px;
   width: 41px;
   line-height: 29px;
   height: 25px;
@@ -83,32 +83,26 @@ div[data-fighter="BOWSER"] .hp {
 
 /* ------------------ DOCKS/POSITION CLASSES -------------------- */
 
-.dock-player1-empty {
+.dock-player1-empty, .dock-player2-empty {
   border: 3px solid rgba(56, 54, 54, 0.5);
   background-color: rgb(226, 226, 226);
   text-shadow: -1.5px 0 black, 0 1.5px black,
     1.5px 0 black, 0 -1.5px black;
-  font-family: myFirstFont;
   color: white;
-  font-size: 27px;
+  /* font-size: 27px; */
   line-height: 125px;
-  left: 315px;
-  top: 360px;
   z-index: 1;
 }
 
+.dock-player1-empty {
+  left: 315px;
+  top: 360px;
+}
+
 .dock-player2-empty {
-  border: 3px solid rgba(56, 54, 54, 0.5);
-  background-color: rgb(226, 226, 226);
-  text-shadow: -1.5px 0 black, 0 1.5px black,
-    1.5px 0 black, 0 -1.5px black;
-  font-family: myFirstFont;
-  color: white;
-  font-size: 27px;
-  line-height: 125px;
   left: 720px;
   top: 360px;
-  z-index: 1;
+
 }
 
 .dock-fighter1 {
@@ -139,44 +133,39 @@ div[data-fighter="BOWSER"] .hp {
 /* ----------------------- BUTTON CLASSES -------------------------- */
 
 .start-button, .attack-button, .restart-button {
-  background-color: white;
-  background-position: center;
   left: 531px;
   width: 150px;
-  height: 35px;
-  line-height: 50px;
   position: absolute;
-  border-radius: 5px;
-  border: 1px solid #4ca1f9;  
-
+  border-radius: 5px;  
 }
-.start-button {
-  top: 405px;
-  font-family: myFirstFont;
+.start-button, .restart-button {
+  background-color: white;
+  height: 35px;
   border: 3px solid #4ca1f9;
   color: #4ca1f9;
-  font-size: 25px;
   line-height: 36px;
 }
 .attack-button {
-  top: 310px;
+  top: 305px;
   height: 60px;
   background-color: red;
   color: white;
   border: 3px solid white;
-  font-family: myFirstFont;
   line-height: 60px;
   font-size: 32px;
 }
+
+.start-button {
+  top: 380px;
+}
 .restart-button {
-  top: 450px;
+  top: 430px;
 }
 
 
 /* ---------------------- STATUS BAR CLASS ------------------------ */
 
 .status-bar {
-  font-family: myFirstFont;
   background-color: #4ca1f9;
   border: 3px solid  white;
   color: white;
@@ -187,7 +176,6 @@ div[data-fighter="BOWSER"] .hp {
   top: 498px;
   left: 182px;
   border-radius: 5px;
-  font-size: 25px;
   z-index: 1;
 }
 .blink {
@@ -230,7 +218,7 @@ div[data-fighter="BOWSER"] .hp {
   z-index: 5;
 }
 .LUIGI-lose {
-  background: url(../images/luigi-lose.png);
+  background: url(../images/LUIGI-lose.jpg);
   border: 5px solid black;
   z-index: 5;
 }
@@ -264,8 +252,19 @@ div[data-fighter="BOWSER"] .hp {
 
 
 
-
-
+.modal {
+    background-color: white;
+    border: 3px solid #4ca1f9;
+    color: #4ca1f9;
+    position: absolute;
+    height: 606px;
+    width: 851px;
+    border-radius: 5px;
+    z-index: 100;
+    left: 181px;
+    top: 105px;
+    padding-top: 24px;
+}
 
 
 

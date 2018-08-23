@@ -1,5 +1,117 @@
 var game = {
-    fighterData: [
+  fighterData: [
+    {
+      name: "MARIO",
+      hp: 120,
+      ap: 8,
+      cp: 15
+    }, {
+      name: "LUIGI",
+      hp: 100,
+      ap: 10,
+      cp: 10
+    }, {
+      name: "YOSHI",
+      hp: 150,
+      ap: 6,
+      cp: 20
+    }, {
+      name: "BOWSER",
+      hp: 180,
+      ap: 4,
+      cp: 25
+    }
+  ],
+  player1Chosen: false,
+  allPlayersChosen: false,
+  startClicked: false,
+  gameOver: true,
+  player1: {},
+  player2: {},
+  $statusBar: $(".message-text"),
+
+  attack: function () {
+    var $player1HP = $(".player1").children(".hp");
+    var $player2HP = $(".player2").children(".hp");
+    var p1 = this.player1;
+    var p2 = this.player2;
+
+    p2.hp -= p1.ap;
+    if (p2.hp < 0) {
+      p2.hp = 0;
+    }
+    $player2HP.text(p2.hp);
+
+    if (p2.hp <= 0) {
+      this.allPlayersChosen = false;
+      $(".player2").addClass(p2.name + "-lose");
+      $(".player2").addClass("defeated");
+      $(".player2").removeClass("dock-player2 player2");
+      $(".player2").removeClass(p2.name);
+      $(".attack-button").addClass("hidden");
+      game.$statusBar.text(p2.name + " HAS 0 HP! CHOOSE ANOTHER OPPONENT!").css("font-size", "25px");
+      $player2HP.css("background-color", "black")
+      if ($(".defeated").length === 3) {
+        $(".player1").addClass(p1.name + "-win win-border");
+        $(".player1").children().hide();
+        game.$statusBar.text("GAME OVER! " + p1.name + " HAS WON THE MUSHROOM KINGDOM RPG CHALLENGE!").css("font-size", "20px");
+        $(".restart-button").removeClass("hidden");
+      }
+    } else {
+      p1.hp -= p2.cp;
+      if (p1.hp < 0) {
+        p1.hp = 0;
+      }
+      $player1HP.text(p1.hp);
+
+      if (p1.hp <= 0) {
+        $(".player1").addClass(p1.name + "-lose");
+        $(".player2").addClass(p2.name + "-win win-border");
+        $(".player1").children().hide();
+        $(".player2").children().hide();
+        $player1HP.css("background-color", "black")
+        game.$statusBar.text(p1.name + " HAS 0 HP! YOU LOSE!").css("font-size", "25px");
+        $(".restart-button").removeClass("hidden");
+      }
+
+      game.$statusBar.text(p1.name + " ATTACKS " + p2.name + " FOR " + p1.ap + " DAMAGE & " + p2.name + " ATTACKS " + p1.name + " FOR " + p2.cp + " DAMAGE").css("font-size", "20px");
+      p1.ap *= 2;
+
+    }
+  },
+
+  gameStart: function () {
+    if (this.gameOver) {
+      this.gameOver = false;
+      this.startClicked = true;
+      game.$statusBar.removeClass("blink");
+      game.$statusBar.text("SELECT PLAYER 1");
+    }
+  },
+
+  assignPlayer: function (fighter) {
+    for (var i = 0; i < this.fighterData.length; i++) {
+      if (this.fighterData[i].name === fighter.attr("data-fighter") && this.startClicked) {
+        if (!this.player1Chosen) {
+          this.player1Chosen = true;
+          this.player1 = this.fighterData[i];
+          $(fighter).addClass("dock-player1 player1");
+          game.$statusBar.text("SELECT PLAYER 2");
+        } else {
+          if (!$(fighter).hasClass("player1") && !$(fighter).hasClass("defeated") && (!this.allPlayersChosen)) {
+            this.allPlayersChosen = true;
+            this.player2 = this.fighterData[i];
+            $(fighter).addClass("dock-player2 player2");
+            $(".attack-button").removeClass("hidden");
+            game.$statusBar.text("BATTLE! CLICK ATTACK TO DEFEAT " + this.fighterData[i].name);
+          }
+        }
+      }
+    }
+  },
+
+  restart: function() {
+    this.fighterData = [
       {
         name: "MARIO",
         hp: 120,
@@ -21,105 +133,53 @@ var game = {
         ap: 4,
         cp: 25
       }
-    ],
-    player1Chosen: false,
-    player2Chosen: false,
-    startClicked: false,
-    gameOver: true,
-    player1: {},
-    player2: {},
-    $statusBar: $(".message-text"),
+    ];
+    this.player1Chosen = false;
+    this.allPlayersChosen = false;
+    this.startClicked = false;
+    this.gameOver = true;
+    this.player1 = {};
+    this.player2 = {};
 
-    attack: function() {
-      var $player1HP = $(".player1").children(".hp");
-      var $player2HP = $(".player2").children(".hp");
-      var p1 = this.player1;
-      var p2 = this.player2;
+//////////////////////////////////////////////////
+    $(".fighter").removeClass("win-border defeated dock-player1 player1 dock-player2 player2 MARIO-win MARIO-lose LUIGI-win LUIGI-lose YOSHI-win YOSHI-lose BOWSER-win BOWSER-lose");
 
-      p2.hp -= p1.ap;
-      if (p2.hp < 0) {
-        p2.hp = 0;
-      }
-      $player2HP.text(p2.hp);
+    $(".MARIO-hp").css("background-color", "red").text("120");
+    $(".LUIGI-hp").css("background-color", "blue").text("100");
+    $(".YOSHI-hp").css("background-color", "green").text("140");
+    $(".BOWSER-hp").css("background-color", "orange").text("180");
 
-      if (p2.hp = 0) {
-        p2Chosen = false;
-        p2.hp = 0
-        game.$statusBar.text(p2.name + " HAS 0 HP! CHOOSE ANOTHER OPPONENT!").css("font-size", "25px");
-        $(".player2").addClass(p2.name + "-lose");
-        $(".player2").addClass("defeated");
-        $(".player2").removeClass("dock-player2 player2");
-        $(".player2").removeClass(p2.name);
-      }
+    
+    game.$statusBar.addClass("blink");
+    game.$statusBar.text("PRESS START TO PLAY").css("font-size", "25px");
 
-      if ($(".defeated").length === 3) {
-        game.$statusBar.text("GAME OVER! " + p1.name + " HAS WON THE MUSHROOM KINGDOM RPG CHALLENGE!").css("font-size", "20px");
-        $(".player1").addClass(p1.name + "-win win-border");
-        $(".player1").children().hide();
-      }
+    $(".fighter").children().show();
 
-      p1.hp -= p2.cp;
-      if (p1.hp < 0) {
-        p1.hp = 0;
-      }
-      $player1HP.text(p1.hp);
-
-      if (p1.hp <= 0) {
-        p1.hp = 0
-        game.$statusBar.text(p1.name + " HAS 0 HP! YOU LOSE!").css("font-size", "25px");
-        $(".player1").addClass(p1.name + "-lose");
-      }
-
-      game.$statusBar.text(p1.name + " ATTACKS " + p2.name + " FOR " + p1.ap + " DAMAGE & " + p2.name + " ATTACKS " + p1.name + " FOR " + p2.cp + " DAMAGE").css("font-size", "20px");
-      p1.ap *= 2;
-    },
-
-    gameStart: function () {
-      if (this.gameOver) {
-        this.gameOver = false;
-        this.startClicked = true;
-        game.$statusBar.removeClass("blink");
-        game.$statusBar.text("SELECT PLAYER 1");
-      }
-    },
-
-    assignPlayer: function(fighter) {
-      for (var i = 0; i < this.fighterData.length; i++) {
-        if (this.fighterData[i].name === fighter.attr("data-fighter") && this.startClicked) {
-          if (!this.player1Chosen) {
-            this.player1Chosen = true;
-            this.player1 = this.fighterData[i];
-            $(fighter).addClass("dock-player1 player1");
-            game.$statusBar.text("SELECT PLAYER 2");
-          } else {
-            if (!$(fighter).hasClass("player1") && !$(fighter).hasClass("defeated")) {
-              this.player2Chosen = true;
-              this.player2 = this.fighterData[i];
-              $(fighter).addClass("dock-player2 player2");
-              $(".attack-button").removeClass("hidden");
-              game.$statusBar.text("BATTLE! CLICK ATTACK TO DEFEAT " + this.fighterData[i].name);
-            }
-          }
-        }
-      }
-    }
   }
+
 }
-  
+
+
+
+
 $(document).ready(function () {
 
-  $(".start-button").on("click", function() {
+  $(".start-button").on("click", function () {
     game.gameStart();
   });
 
-  $(".fighter").on("click", function() {
+  $(".fighter").on("click", function () {
     var fighter = $(this);
     game.assignPlayer(fighter);
   });
 
-  $(".attack-button").on("click", function() {
+  $(".attack-button").on("click", function () {
     game.attack();
-  }); 
+  });
+
+  $(".restart-button").on("click", function () {
+    game.restart();
+  });
 
 });
 
