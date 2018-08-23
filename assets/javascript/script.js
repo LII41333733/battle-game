@@ -31,15 +31,15 @@ var game = {
     $statusBar: $(".message-text"),
 
     attack: function() {
-      var $player1 = $(".player1").children(".hp");
-      var $player2 = $(".player2").children(".hp");
+      var $player1HP = $(".player1").children(".hp");
+      var $player2HP = $(".player2").children(".hp");
       var p1 = this.player1;
       var p2 = this.player2;
       if (this.player2Chosen) {
         p2.hp -= p1.ap;
         p1.hp -= p2.cp;
-        $player1.text(p1.hp);
-        $player2.text(p2.hp);
+        $player1HP.text(p1.hp);
+        $player2HP.text(p2.hp);
         game.$statusBar.text(p1.name + " ATTACKS " + p2.name + " FOR " + p1.ap + " DAMAGE & " + p2.name + " ATTACKS " + p1.name + " FOR " + p2.cp + " DAMAGE").css("font-size", "20px");
         p1.ap *= 2;
       }

@@ -35,22 +35,22 @@ html, body {
 div[data-fighter="MARIO"]{
   border: 5px solid red;
   z-index: 5;
-  background: url(../images/MARIO.jpg);
+  background: url(../images/mario.jpg);
 }
 div[data-fighter="LUIGI"]{
   border: 5px solid blue;
   z-index: 5;
-  background: url(../images/LUIGI.jpg);
+  background: url(../images/luigi.jpg);
 }
 div[data-fighter="YOSHI"]{
   border: 5px solid green;
   z-index: 5;
-  background: url(../images/YOSHI.jpg);
+  background: url(../images/yoshi.jpg);
 }
 div[data-fighter="BOWSER"]{
   border: 5px solid orange;
   z-index: 5;
-  background: url(../images/BOWSER.png);
+  background: url(../images/bowser.png);
 }
 
 div[data-fighter="MARIO"] .hp {
@@ -208,39 +208,39 @@ div[data-fighter="BOWSER"] .hp {
 /* ----------------------- WIN CLASSES -------------------------- */
 
 .MARIO-win {
-  background: url(../images/MARIO-win.jpg);
+  background: url(../images/mario-win.jpg);
 }
 .LUIGI-win {
-  background: url(../images/LUIGI-win.jpg);
+  background: url(../images/luigi-win.jpg);
 
 }
 .YOSHI-win {
-  background: url(../images/YOSHI-win.jpg);
+  background: url(../images/yoshi-win.jpg);
 
 }
 .BOWSER-win {
-  background: url(../images/BOWSER-win.jpg);
+  background: url(../images/bowser-win.jpg);
 }
 
 /* ----------------------- LOSE CLASSES -------------------------- */
 
 .MARIO-lose {
-  background: url(../images/MARIO-lose.jpg);
+  background: url(../images/mario-lose.jpg);
   border: 5px solid black;
   z-index: 5;
 }
 .LUIGI-lose {
-  background: url(../images/LUIGI-lose.png);
+  background: url(../images/luigi-lose.png);
   border: 5px solid black;
   z-index: 5;
 }
 .YOSHI-lose {
-  background: url(../images/YOSHI-lose.jpg);
+  background: url(../images/yoshi-lose.jpg);
   border: 5px solid black;
   z-index: 5;
 }
 .BOWSER-lose {
-  background: url(../images/BOWSER-lose.png);
+  background: url(../images/bowser-lose.png);
   border: 5px solid black;
   z-index: 5;
 }
