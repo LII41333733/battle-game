@@ -35,35 +35,43 @@ var game = {
       var $player2HP = $(".player2").children(".hp");
       var p1 = this.player1;
       var p2 = this.player2;
-      if (this.player2Chosen) {
-        p2.hp -= p1.ap;
-        p1.hp -= p2.cp;
-        $player1HP.text(p1.hp);
-        $player2HP.text(p2.hp);
-        game.$statusBar.text(p1.name + " ATTACKS " + p2.name + " FOR " + p1.ap + " DAMAGE & " + p2.name + " ATTACKS " + p1.name + " FOR " + p2.cp + " DAMAGE").css("font-size", "20px");
-        p1.ap *= 2;
+
+      p2.hp -= p1.ap;
+      if (p2.hp < 0) {
+        p2.hp = 0;
       }
-    
-      if (p1.hp <= 0) {
-        p1.hp = 0
-        game.$statusBar.text(p1.name + " HAS 0 HP! YOU LOSE!").css("font-size", "25px");
-        $(".player1").addClass(p1.name + "-lose");
-      }
-    
-      if (p2.hp <= 0) {
+      $player2HP.text(p2.hp);
+
+      if (p2.hp = 0) {
         p2Chosen = false;
         p2.hp = 0
         game.$statusBar.text(p2.name + " HAS 0 HP! CHOOSE ANOTHER OPPONENT!").css("font-size", "25px");
         $(".player2").addClass(p2.name + "-lose");
         $(".player2").addClass("defeated");
         $(".player2").removeClass("dock-player2 player2");
+        $(".player2").removeClass(p2.name);
       }
-    
+
       if ($(".defeated").length === 3) {
         game.$statusBar.text("GAME OVER! " + p1.name + " HAS WON THE MUSHROOM KINGDOM RPG CHALLENGE!").css("font-size", "20px");
         $(".player1").addClass(p1.name + "-win win-border");
         $(".player1").children().hide();
       }
+
+      p1.hp -= p2.cp;
+      if (p1.hp < 0) {
+        p1.hp = 0;
+      }
+      $player1HP.text(p1.hp);
+
+      if (p1.hp <= 0) {
+        p1.hp = 0
+        game.$statusBar.text(p1.name + " HAS 0 HP! YOU LOSE!").css("font-size", "25px");
+        $(".player1").addClass(p1.name + "-lose");
+      }
+
+      game.$statusBar.text(p1.name + " ATTACKS " + p2.name + " FOR " + p1.ap + " DAMAGE & " + p2.name + " ATTACKS " + p1.name + " FOR " + p2.cp + " DAMAGE").css("font-size", "20px");
+      p1.ap *= 2;
     },
 
     gameStart: function () {
@@ -84,7 +92,7 @@ var game = {
             $(fighter).addClass("dock-player1 player1");
             game.$statusBar.text("SELECT PLAYER 2");
           } else {
-            if (!$(this).hasClass("player1") && !$(this).hasClass("defeated")) {
+            if (!$(fighter).hasClass("player1") && !$(fighter).hasClass("defeated")) {
               this.player2Chosen = true;
               this.player2 = this.fighterData[i];
               $(fighter).addClass("dock-player2 player2");
@@ -96,6 +104,7 @@ var game = {
       }
     }
   }
+}
   
 $(document).ready(function () {
 
@@ -113,5 +122,6 @@ $(document).ready(function () {
   }); 
 
 });
+
 
 

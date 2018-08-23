@@ -32,22 +32,22 @@ html, body {
 }
 
 
-div[data-fighter="MARIO"]{
+.MARIO {
   border: 5px solid red;
   z-index: 5;
   background: url(../images/mario.jpg);
 }
-div[data-fighter="LUIGI"]{
+.LUIGI {
   border: 5px solid blue;
   z-index: 5;
   background: url(../images/luigi.jpg);
 }
-div[data-fighter="YOSHI"]{
+.YOSHI {
   border: 5px solid green;
   z-index: 5;
-  background: url(../images/yoshi.jpg);
+  background: url(../images/YOSHI.jpg);
 }
-div[data-fighter="BOWSER"]{
+.BOWSER {
   border: 5px solid orange;
   z-index: 5;
   background: url(../images/bowser.png);
