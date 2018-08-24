@@ -47,7 +47,7 @@ html, body {
 .YOSHI {
   border: 5px solid green;
   z-index: 5;
-  background: url(../images/YOSHI.jpg);
+  background: url(../images/yoshi.jpg);
 }
 .BOWSER {
   border: 5px solid orange;
