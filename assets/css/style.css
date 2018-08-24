@@ -273,12 +273,12 @@ html, body {
     border: 3px solid #4ca1f9;
     color: #4ca1f9;
     position: absolute;
-    height: 660px;
+    height: 620px;
     width: 851px;
     border-radius: 5px;
     z-index: 100;
     left: 181px;
-    top: 5px;
+    top: 20px;
     padding: 24px;
     text-align: center;
     font-size: 22px;
