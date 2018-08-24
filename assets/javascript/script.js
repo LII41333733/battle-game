@@ -4,22 +4,22 @@ var game = {
       name: "MARIO",
       hp: 120,
       ap: 2,
-      cp: 20
+      cp: 30
     }, {
       name: "LUIGI",
       hp: 100,
       ap: 5,
-      cp: 15
+      cp: 25
     }, {
       name: "YOSHI",
       hp: 200,
       ap: 3,
-      cp: 25
+      cp: 20
     }, {
       name: "BOWSER",
       hp: 150,
       ap: 4,
-      cp: 30
+      cp: 35
     }
   ],
   player1Chosen: false,
@@ -72,11 +72,10 @@ var game = {
         $player1HP.css("background-color", "black")
         game.$statusBar.text(p1.name + " HAS 0 HP! YOU LOSE!").css("font-size", "25px");
         $(".restart-button").removeClass("hidden");
+      } else {
+        game.$statusBar.text(p1.name + " ATTACKS " + p2.name + " FOR " + p1.ap + " DAMAGE & " + p2.name + " ATTACKS " + p1.name + " FOR " + p2.cp + " DAMAGE").css("font-size", "20px");
+        p1.ap *= 2;
       }
-
-      game.$statusBar.text(p1.name + " ATTACKS " + p2.name + " FOR " + p1.ap + " DAMAGE & " + p2.name + " ATTACKS " + p1.name + " FOR " + p2.cp + " DAMAGE").css("font-size", "20px");
-      p1.ap *= 2;
-
     }
   },
 

@@ -243,7 +243,7 @@ html, body {
   z-index: 99;
 }
 
-/* ----------------------- MISC. CLASSES -------------------------- */
+/* ----------------------- MISC & MODAL CLASSES -------------------------- */
 
 .hidden {
   visibility: hidden;
@@ -285,12 +285,3 @@ html, body {
     line-height: 30px;
 }
 
-
-
-
-
-
-/* img {
-  width: 200px;
-  height: 188px;
-} */
