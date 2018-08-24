@@ -2,24 +2,24 @@ var game = {
   fighterData: [
     {
       name: "MARIO",
-      hp: 120,
-      ap: 2,
-      cp: 30
+      hp: 0,
+      ap: 0,
+      cp: 0
     }, {
       name: "LUIGI",
-      hp: 100,
-      ap: 5,
-      cp: 25
+      hp: 0,
+      ap: 0,
+      cp: 0
     }, {
       name: "YOSHI",
-      hp: 200,
-      ap: 3,
-      cp: 20
+      hp: 0,
+      ap: 0,
+      cp: 0
     }, {
       name: "BOWSER",
-      hp: 150,
-      ap: 4,
-      cp: 35
+      hp: 0,
+      ap: 0,
+      cp: 0
     }
   ],
   player1Chosen: false,
@@ -50,10 +50,10 @@ var game = {
       $(".player2").removeClass(p2.name);
       $(".attack-button").addClass("hidden");
       game.$statusBar.text(p2.name + " HAS 0 HP! CHOOSE ANOTHER OPPONENT!").css("font-size", "25px");
-      $player2HP.css("background-color", "black")
+      $player2HP.css("background-color", "black");
       if ($(".defeated").length === 3) {
         $(".player1").addClass(p1.name + "-win win-border");
-        $(".player1").children().hide();
+        $(".hp").hide();
         game.$statusBar.text("GAME OVER! " + p1.name + " HAS WON THE MUSHROOM KINGDOM RPG CHALLENGE!").css("font-size", "20px");
         $(".restart-button").removeClass("hidden");
       }
@@ -67,19 +67,21 @@ var game = {
       if (p1.hp <= 0) {
         $(".player1").addClass(p1.name + "-lose");
         $(".player2").addClass(p2.name + "-win win-border");
-        $(".player1").children().hide();
-        $(".player2").children().hide();
+        $(".hp").hide();
         $player1HP.css("background-color", "black")
         game.$statusBar.text(p1.name + " HAS 0 HP! YOU LOSE!").css("font-size", "25px");
-        $(".restart-button").removeClass("hidden");
+        $(".attack-button").addClass("hidden");
       } else {
         game.$statusBar.text(p1.name + " ATTACKS " + p2.name + " FOR " + p1.ap + " DAMAGE & " + p2.name + " ATTACKS " + p1.name + " FOR " + p2.cp + " DAMAGE").css("font-size", "20px");
-        p1.ap *= 2;
       }
     }
+    p1.ap *= 2;
   },
 
   gameStart: function () {
+    // this.copy = this.fighterData;
+    // console.log(this.fighterData);
+
     if (this.gameOver) {
       this.gameOver = false;
       this.startClicked = true;
@@ -91,6 +93,7 @@ var game = {
   assignPlayer: function (fighter) {
     for (var i = 0; i < this.fighterData.length; i++) {
       if (this.fighterData[i].name === fighter.attr("data-fighter") && this.startClicked) {
+        this.setHP(this.fighterData[i].name);
         if (!this.player1Chosen) {
           this.player1Chosen = true;
           this.player1 = this.fighterData[i];
@@ -102,6 +105,7 @@ var game = {
             this.player2 = this.fighterData[i];
             $(fighter).addClass("dock-player2 player2");
             $(".attack-button").removeClass("hidden");
+            $(".hp").show();
             game.$statusBar.text("BATTLE! CLICK ATTACK TO DEFEAT " + this.fighterData[i].name);
           }
         }
@@ -110,52 +114,89 @@ var game = {
   },
 
   restart: function() {
-    this.fighterData = [
-      {
-        name: "MARIO",
-        hp: 120,
-        ap: 8,
-        cp: 20      }, {
-        name: "LUIGI",
-        hp: 100,
-        ap: 10,
-        cp: 15
-      }, {
-        name: "YOSHI",
-        hp: 150,
-        ap: 6,
-        cp: 25
-      }, {
-        name: "BOWSER",
-        hp: 180,
-        ap: 4,
-        cp: 30
-      }
-    ];
     this.player1Chosen = false;
     this.allPlayersChosen = false;
     this.startClicked = false;
     this.gameOver = true;
     this.player1 = {};
     this.player2 = {};
-
-//////////////////////////////////////////////////
     $(".fighter").removeClass("win-border defeated dock-player1 player1 dock-player2 player2 MARIO-win MARIO-lose LUIGI-win LUIGI-lose YOSHI-win YOSHI-lose BOWSER-win BOWSER-lose");
-
-    $(".MARIO-hp").css("background-color", "red").text("120");
-    $(".LUIGI-hp").css("background-color", "blue").text("100");
-    $(".YOSHI-hp").css("background-color", "green").text("140");
-    $(".BOWSER-hp").css("background-color", "orange").text("180");
+    $(".attack-button").addClass("hidden");
+    $(".MARIO-hp").css("background-color", "red").text(game.fighterData[0].hp);
+    $(".LUIGI-hp").css("background-color", "blue").text(game.fighterData[1].hp);
+    $(".YOSHI-hp").css("background-color", "green").text(game.fighterData[2].hp);
+    $(".BOWSER-hp").css("background-color", "orange").text(game.fighterData[3].hp);
 
     
     game.$statusBar.addClass("blink");
     game.$statusBar.text("PRESS START TO PLAY").css("font-size", "25px");
 
-    $(".fighter").children().show();
 
+  },
+
+  setHP(character) {
+    if (character === "MARIO") {
+      this.fighterData[0].hp = 150;
+      this.fighterData[0].ap = 6;
+      this.fighterData[0].cp = 60;
+      this.fighterData[1].hp = 180;
+      this.fighterData[1].ap = 8;
+      this.fighterData[1].cp = 30;
+      this.fighterData[2].hp = 220;
+      this.fighterData[2].ap = 9;
+      this.fighterData[2].cp = 45;
+      this.fighterData[3].hp = 160;
+      this.fighterData[3].ap = 10;
+      this.fighterData[3].cp = 35;
+    }
+    if (character === "LUIGI") {
+      this.fighterData[0].hp = 160;
+      this.fighterData[0].ap = 10;
+      this.fighterData[0].cp = 35;
+      this.fighterData[1].hp = 150;
+      this.fighterData[1].ap = 6;
+      this.fighterData[1].cp = 60;
+      this.fighterData[2].hp = 180;
+      this.fighterData[2].ap = 8;
+      this.fighterData[2].cp = 30;
+      this.fighterData[3].hp = 220;
+      this.fighterData[3].ap = 9;
+      this.fighterData[3].cp = 45;
+    }
+    if (character === "YOSHI") {
+      this.fighterData[0].hp = 220;
+      this.fighterData[0].ap = 9;
+      this.fighterData[0].cp = 45;
+      this.fighterData[1].hp = 160;
+      this.fighterData[1].ap = 10;
+      this.fighterData[1].cp = 35;
+      this.fighterData[2].hp = 150;
+      this.fighterData[2].ap = 6;
+      this.fighterData[2].cp = 60;
+      this.fighterData[3].hp = 180;
+      this.fighterData[3].ap = 8;
+      this.fighterData[3].cp = 30;
+    }
+    if (character === "BOWSER") {
+      this.fighterData[0].hp = 180;
+      this.fighterData[0].ap = 8;
+      this.fighterData[0].cp = 30;
+      this.fighterData[1].hp = 220;
+      this.fighterData[1].ap = 9;
+      this.fighterData[1].cp = 45;
+      this.fighterData[2].hp = 160;
+      this.fighterData[2].ap = 10;
+      this.fighterData[2].cp = 35;
+      this.fighterData[3].hp = 150;
+      this.fighterData[3].ap = 6;
+      this.fighterData[3].cp = 60;
+    }
   }
 
+
 }
+
+
 
 
 
@@ -181,6 +222,10 @@ $(document).ready(function () {
 
   $(".toad").on("click", function () {
     $(".modal").hide();
+    $('.MARIO-hp').text(game.fighterData[0].hp);
+    $('.LUIGI-hp').text(game.fighterData[1].hp);
+    $('.YOSHI-hp').text(game.fighterData[2].hp);
+    $('.BOWSER-hp').text(game.fighterData[3].hp);
   });
 
 
