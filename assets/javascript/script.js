@@ -4,22 +4,22 @@ var game = {
       name: "MARIO",
       hp: 120,
       ap: 2,
-      cp: 15
+      cp: 20
     }, {
       name: "LUIGI",
       hp: 100,
       ap: 5,
-      cp: 20
+      cp: 15
     }, {
       name: "YOSHI",
       hp: 200,
       ap: 3,
-      cp: 10
+      cp: 25
     }, {
       name: "BOWSER",
       hp: 150,
       ap: 4,
-      cp: 25
+      cp: 30
     }
   ],
   player1Chosen: false,
