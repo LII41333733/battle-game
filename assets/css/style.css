@@ -77,8 +77,8 @@ html, body {
   right: -4px;
   bottom: 0;
   border-radius: 5px 0 0 0;
-  margin-left: 0.5px;
-  z-index: 3;
+  z-index: 1;
+  margin-right: 3px;
 }
 
 /* ------------------ DOCKS/POSITION CLASSES -------------------- */
@@ -278,10 +278,15 @@ html, body {
     border-radius: 5px;
     z-index: 100;
     left: 181px;
-    top: 5px;
+    top: 25px;
     padding: 24px;
     text-align: center;
     font-size: 22px;
     line-height: 30px;
 }
 
+#BB {
+  position: absolute;
+  top: 70px;
+  right: -150px;
+}
