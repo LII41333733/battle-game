@@ -32,10 +32,10 @@ The main functionality of the battle game is the use of JQuery to manipulate the
 ![Choosing a Player](assets/images/screenshot2.png)
 
 ### Gameplay
-![Choosing a Player](assets/images/screenshot3.png)
+![Choosing a Player](assets/images/screenshot4.png)
 
 ### Player 1 Wins!
-![Player 1 Wins](assets/images/screenshot4.png)
+![Player 1 Wins](assets/images/screenshot3.png)
 
 ### Player 2 Wins!
 ![Player 2 Wins](assets/images/screenshot5.png)
